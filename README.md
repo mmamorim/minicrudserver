@@ -21,7 +21,7 @@ Os dados ficam armazenados localmente no formato JSON no arquivo [db_data.json](
 
 #### Exemplo para criar uma entidade `filmes` 
 
-Adicione ao arquivo de banco de dados JSON uma chave filmes e se preferir, já adicione um filme com estrutura desejada (exemplo de um filme):
+🧑‍💻 Adicione ao arquivo de banco de dados JSON `db_data.json` uma chave filmes e se preferir, já adicione um filme com estrutura desejada (exemplo de um filme):
 
 ~~~javascript 
 "filmes": {
@@ -34,7 +34,7 @@ Adicione ao arquivo de banco de dados JSON uma chave filmes e se preferir, já a
 }
 ~~~
 
-🧑‍💻 Dado o arquivo `routes.js` (exemplo neste repositório), adicionar as linhas:
+🧑‍💻 No arquivo `routes.js` (exemplo neste repositório), adicionar as linhas:
 
 ~~~javascript 
 createAPI(app, "/filmes", "filmes" )
@@ -55,4 +55,20 @@ function addRoutes(app) {
 
 export default addRoutes
 ~~~
+
+O servidor irá disponibilizar as seguintes rotas (paths), métodos e parâmetros:
+
+> **GET 	/filmes**
+> Devolve JSON contendo todos os filmes
+
+> **POST 	/filmes**
+> Insere filme. Os dados devem ser enviados no *body* da requisição HTTP. 
+> **Deve necessariamente** conter um campo **id** como atributo. { "id": "XXXX", ... }
+
+> **PUT 	/filmes/{id}**
+> Altera filme com respectivo **id**. Os dados devem ser enviados no *body* da requisição HTTP.
+
+> **DELETE /filmes/{id}**
+> Remove filme com respectivo **id**. 
+
 
