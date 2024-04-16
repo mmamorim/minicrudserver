@@ -1,4 +1,4 @@
-import createAPI from "./controllers/create-api.js"
+import createAPI from "./create-api.js"
 
 // Criar todas as rotas e cruds para as entidades
 function addRoutes(app) {

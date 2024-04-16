@@ -1,19 +1,36 @@
 {
   "frutas": {
-    "maçã": "maçã",
-    "pera": "pera",
-    "banana": "banana",
-    "goiaba": "goiaba",
-    "amora": "amora",
-    "limao": "limao",
-    "abacate": "abacate"
+    "banana" : {
+      "nome": "Banana",
+      "emoji": "🍌"
+    },
+    "limao": {
+      "nome": "Limão",
+      "emoji": "🍋"
+    },
+    "uva": {
+      "nome": "Uva",
+      "emoji": "🍇"
+    }
   },
   "filmes": {
-    "filme-01": {
+    "filme01": {
       "id": "filme-01",
       "nome": "O vento levou",
       "ano": 1960,
       "genero": "romance"
+    },
+    "filme02": {
+      "id": "filme02",
+      "nome": "de volta p/ futuro",
+      "ano": "1980",
+      "genero": "aventura"
+    },
+    "filme03": {
+      "id": "filme03",
+      "nome": "Rambo II",
+      "ano": "1980",
+      "genero": "aventura"
     }
   }
 }

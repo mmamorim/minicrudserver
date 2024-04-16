@@ -10,8 +10,12 @@ Clone ou faça o download deste repositório. Acesse a pasta, instale as depend�
 git clone https://github.com/mmamorim/minicrudserver.git
 cd minicrudserver
 npm install
-nodemon servers.js
+node server.js
 ```
+
+## Onde os dados ficam armazenados?
+
+Os dados ficam armazenados localmente no formato JSON no arquivo [db_data.json](db_data.json) na pasta raiz do servidor.
 
 ## Como criar uma nova Entidade e API CRUD?
 
@@ -21,8 +25,8 @@ Adicione ao arquivo de banco de dados JSON uma chave filmes e se preferir, já a
 
 ~~~javascript 
 "filmes": {
-    "filme-01": {
-        "id": "filme-01",
+    "filme01": {
+        "id": "filme01",
         "nome": "O vento levou",
         "ano": 1960,
         "genero": "romance" 

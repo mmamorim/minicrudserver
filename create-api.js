@@ -1,9 +1,8 @@
-import sgbd from '../sgbd.js'
+import sgbd from './sgbd.js'
 
-const route = "/filmes"
-const entity = "filmes"
+function createAPI(app, route, entity) {
 
-function frutas(app) {
+    console.log(`🔥 API para entidade [${entity}] criada...`);
 
     app.get(route, function (req, res) {
         console.log('alguém fez requisição GET '+route);
@@ -18,15 +17,15 @@ function frutas(app) {
     app.post(route, function (req, res) {
         console.log('alguém fez requisição POST '+route);
         console.log('conteúdo do body:', req.body);
-        sgbd.db[entity][req.body.fruta] = req.body.fruta
+        sgbd.db[entity][req.body.id] = req.body
         sgbd.write()
-        res.json(sgbd.db[entity][req.body.fruta])
+        res.json(sgbd.db[entity][req.body])
     })
 
     app.put(route+"/:id", function (req, res) {
         console.log('alguém fez requisição PUT '+route+"/:id",req.params);
         console.log('conteúdo do body:', req.body);
-        sgbd.db[entity][req.params.id] = req.body.fruta
+        sgbd.db[entity][req.params.id] = req.body
         sgbd.write()
         res.json(sgbd.db[entity][req.params.id])
     })
@@ -40,4 +39,4 @@ function frutas(app) {
 
 }
 
-export default filmes 
+export default createAPI 
