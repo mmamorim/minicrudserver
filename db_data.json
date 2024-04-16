@@ -1,0 +1,19 @@
+{
+  "frutas": {
+    "maçã": "maçã",
+    "pera": "pera",
+    "banana": "banana",
+    "goiaba": "goiaba",
+    "amora": "amora",
+    "limao": "limao",
+    "abacate": "abacate"
+  },
+  "filmes": {
+    "filme-01": {
+      "id": "filme-01",
+      "nome": "O vento levou",
+      "ano": 1960,
+      "genero": "romance"
+    }
+  }
+}
