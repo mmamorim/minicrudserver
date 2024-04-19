@@ -1,6 +1,20 @@
 {
+  "musicas": {
+    "musica01": {
+      "id": "musica01",
+      "nome": "Nome da musica",
+      "ano": "1980",
+      "genero": "rock"
+    },
+    "musica02": {
+      "id": "musica02",
+      "nome": "Uma m´usica 2",
+      "ano": "2016",
+      "genero": "pop"
+    }
+  },
   "frutas": {
-    "banana" : {
+    "banana": {
       "nome": "Banana",
       "emoji": "🍌"
     },

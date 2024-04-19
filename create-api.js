@@ -1,4 +1,5 @@
 import sgbd from './sgbd.js'
+import auth from "./auth.js"
 
 function createAPI(app, route, entity) {
 
@@ -14,7 +15,7 @@ function createAPI(app, route, entity) {
         res.json(sgbd.db[entity][req.params.id])
     })
 
-    app.post(route, function (req, res) {
+    app.post(route, auth.middlewareAuth, function (req, res) {
         console.log('alguém fez requisição POST '+route);
         console.log('conteúdo do body:', req.body);
         sgbd.db[entity][req.body.id] = req.body

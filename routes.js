@@ -4,6 +4,7 @@ import createAPI from "./create-api.js"
 function addRoutes(app) {
     createAPI(app, "/frutas", "frutas" )
     createAPI(app, "/filmes", "filmes" )
+    createAPI(app, "/musicas", "musicas" )
 }
 
 export default addRoutes
