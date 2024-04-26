@@ -34,26 +34,19 @@ Os dados ficam armazenados localmente no formato JSON no arquivo [db_data.json](
 }
 ~~~
 
-🧑‍💻 No arquivo `routes.js` (exemplo neste repositório), adicionar as linhas:
+🧑‍💻 No arquivo `entities.js` (exemplo neste repositório), adicionar a estrutura de um objeto que modela a Entidade desejada indicando a rota e nome da entidade:
 
 ~~~javascript 
-createAPI(app, "/filmes", "filmes" )
-~~~
-
-o arquivo `routes.js` após modificações:
-
-#### Arquivo: ```routes.js``` 
-
-~~~javascript 
-import createAPI from "./controllers/create-api.js"
-
-// Criar todas as rotas e cruds para as entidades
-function addRoutes(app) {
-    createAPI(app, "/frutas", "frutas" )
-    createAPI(app, "/filmes", "filmes" )
+filmes: {
+    route: "/filmes",
+    name: "filmes",
+    fields: [
+        { name: "id", type: "int", pk: true },
+        { name: "nome", type: "string", pk: false },
+        { name: "ano", type: "int", pk: false },
+        { name: "genero", type: "string", pk: false }
+    ]
 }
-
-export default addRoutes
 ~~~
 
 O servidor irá disponibilizar as seguintes rotas (paths), métodos e parâmetros:

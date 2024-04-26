@@ -1,12 +1,12 @@
 import jwt from "jsonwebtoken"
 
 const auth = {
-    userlogin: 'admin',
+    username: 'admin',
     password: '12345',
     secret: 'meu segredo super secreto',
 
     getToken(username) {
-        let token = jwt.sign({ user: username }, auth.secret, { expiresIn: 30 })
+        let token = jwt.sign({ user: username }, auth.secret, { expiresIn: 120 })
         return token
     },
 
@@ -14,7 +14,7 @@ const auth = {
         app.post('/auth', function (req, res) {
             console.log('conteúdo do body:', req.body);
             let { username, password } = req.body
-            if(username == auth.userlogin && password == auth.password) {
+            if(username == auth.username && password == auth.password) {
                 let token = auth.getToken(username)
                 res.json({ msg: 'ok', token })
             } else {
@@ -29,18 +29,19 @@ const auth = {
         console.log("headerText",headerText);
         if(headerText == undefined) {
             res.status(400).json({ msg: 'token not found.' })
+        } else {
+            let parts = headerText.split(" ")
+            let token = parts[1]
+            console.log("token",token);
+            jwt.verify(token, auth.secret, (err, tokenDecoded) => {
+                if(err) {
+                    res.status(400).json({ msg: 'token not valid. '+err })
+                } else {
+                    //console.log("tokenDecoded",tokenDecoded);
+                    next()    
+                }
+            })
         }
-        let parts = headerText.split(" ")
-        let token = parts[1]
-        console.log("token",token);
-        jwt.verify(token, auth.secret, (err, tokenDecoded) => {
-            if(err) {
-                res.status(400).json({ msg: 'token not valid.' })
-            } else {
-                //console.log("tokenDecoded",tokenDecoded);
-            }
-        })
-        res.json({ msg: 'teste' })
     }
 }
 

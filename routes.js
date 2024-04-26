@@ -1,10 +1,11 @@
 import createAPI from "./create-api.js"
+import entities from "./entities.js"
 
 // Criar todas as rotas e cruds para as entidades
 function addRoutes(app) {
-    createAPI(app, "/frutas", "frutas" )
-    createAPI(app, "/filmes", "filmes" )
-    createAPI(app, "/musicas", "musicas" )
+    for(let key in entities) {
+        createAPI(app, entities[key] )
+    }
 }
 
 export default addRoutes

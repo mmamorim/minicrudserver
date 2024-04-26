@@ -8,7 +8,7 @@
     },
     "musica02": {
       "id": "musica02",
-      "nome": "Uma m´usica 2",
+      "nome": "Uma música 2",
       "ano": "2016",
       "genero": "pop"
     }
@@ -19,12 +19,19 @@
       "emoji": "🍌"
     },
     "limao": {
-      "nome": "Limão",
-      "emoji": "🍋"
+      "nome": "Limao 3",
+      "emoji": "🍋",
+      "id": "limao"
     },
     "uva": {
-      "nome": "Uva",
-      "emoji": "🍇"
+      "nome": "uva",
+      "emoji": "🍇",
+      "id": "uva"
+    },
+    "morango": {
+      "nome": "Morango",
+      "emoji": "🍓",
+      "id": "morango"
     }
   },
   "filmes": {
