@@ -8,7 +8,9 @@ O Mini Servidor CRUD usa de variáveis de ambiente para configurar a porta do se
 
 ```bash
 PORT=3000
+AUTH=true
 SECRET=meu super segredo
+ADMIN_PASSWORD=12345
 ```
 
 ## Como rodar?

@@ -1,12 +1,19 @@
 import 'dotenv/config'
 import jwt from "jsonwebtoken"
+import { SimpleCrypto } from "simple-crypto-js"
 
-console.log("PORT",process.env.PORT);
+const SECRET = process.env.SECRET
+let AUTH = false
+
+if(process.env.AUTH == 'true') {
+    AUTH = true
+    console.log(`🔥 mini crud server using AUTH!`);
+}
 
 const auth = {
     username: 'admin',
     password: '12345',
-    secret: 'meu segredo super secreto',
+    secret: SECRET,
 
     getToken(username) {
         let token = jwt.sign({ user: username }, auth.secret, { expiresIn: 120 })
@@ -28,6 +35,10 @@ const auth = {
 
     async middlewareAuth(req, res, next) {
         console.log("chamei middleware");
+        if(!AUTH) {
+            next()
+            return
+        }
         let headerText = req.headers.authorization
         console.log("headerText",headerText);
         if(headerText == undefined) {

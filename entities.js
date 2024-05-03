@@ -1,5 +1,15 @@
 
 const entities = {
+    users: {
+        route: "/user",
+        name: "users",
+        fields: [
+            { name: "id", type: "int", pk: true },
+            { name: "nome", type: "string", pk: false },
+            { username: "nome", type: "string", pk: false },
+            { password: "emoji", type: "string", pk: false, crypt: true }
+        ]
+    },    
     frutas: {
         route: "/frutas",
         name: "frutas",

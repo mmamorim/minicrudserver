@@ -1,9 +1,17 @@
+import 'dotenv/config'
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import sgbd from './sgbd.js'
 import addRoutes from "./routes.js"
 import auth from "./auth.js"
+
+const PORT = process.env.PORT
+console.log("PORT",PORT);
+if(!PORT) {
+    console.log("Variáveis de ambiente não definidas...Você criou o arquivo .env?");
+    process.exit()
+}
 
 sgbd.init()
 
@@ -36,6 +44,6 @@ app.get('/teste', middlewareTeste, (req, res) => {
 
 addRoutes(app)
 
-app.listen(3000, () => {
-    console.log('🔥 estou escutando na porta 3000');
+app.listen(PORT, () => {
+    console.log('🔥 estou escutando na porta '+PORT);
 })

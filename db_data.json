@@ -53,5 +53,13 @@
       "ano": "1980",
       "genero": "aventura"
     }
+  },
+  "users": {
+    "admin": {
+      "id": "admin",
+      "nome": "Administrador",
+      "username": "admin",
+      "password": "4742aa4e8d62801e931ff6783078bd2e163daf28e430595e2008a62310fc3b40BDEDc3xfWQjLSwgEBTgCLA==94b203e3f54e2955fe7f0197774125515f2b812a3b10bd804d335bacbc02f6fe"
+    }
   }
 }

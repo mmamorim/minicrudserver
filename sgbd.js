@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // Use JSON file for storage
 const file = join(__dirname, './db_data.json')
-console.log("file",file);
+//console.log("file",file);
 
 const db = await JSONFilePreset(file, {})
 
