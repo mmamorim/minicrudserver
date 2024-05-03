@@ -4,7 +4,13 @@ Exemplo simples de servidor que cria uma API persistente para entidades.
 
 ## Configuração das variáveis de ambiente
 
-O Mini Servidor CRUD usa de variáveis de ambiente para configurar a porta do servidor HTTP e secret da autenticação. Para isso é necessário criar um arquivo `.env` na pasta raiz com o seguinte conteudo (exemplo):
+O Mini Servidor CRUD usa de variáveis de ambiente para configurar:
+> `PORT` a porta do servidor HTTP
+> `AUTH` Se o servidor irá ou não utiilizar autenticação 
+> `SECRET` segredo da autenticação
+> `ADMIN_PASSWORD` senha do usuário _admin_ 
+
+Para isso é necessário criar um arquivo `.env` na pasta raiz com o seguinte conteudo (exemplo):
 
 ```bash
 PORT=3000
@@ -22,6 +28,12 @@ git clone https://github.com/mmamorim/minicrudserver.git
 cd minicrudserver
 npm install
 node server.js
+```
+
+## Como criar o usuário Admin?
+
+```bash
+node createAdmin.js
 ```
 
 ## Onde os dados ficam armazenados?
