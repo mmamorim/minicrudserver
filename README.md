@@ -6,8 +6,11 @@ Exemplo simples de servidor que cria uma API persistente para entidades.
 
 O Mini Servidor CRUD usa de variáveis de ambiente para configurar:
 > `PORT` a porta do servidor HTTP
+> 
 > `AUTH` Se o servidor irá ou não utiilizar autenticação 
+> 
 > `SECRET` segredo da autenticação
+> 
 > `ADMIN_PASSWORD` senha do usuário _admin_ 
 
 Para isso é necessário criar um arquivo `.env` na pasta raiz com o seguinte conteudo (exemplo):
