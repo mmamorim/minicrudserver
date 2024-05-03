@@ -2,6 +2,15 @@
 
 Exemplo simples de servidor que cria uma API persistente para entidades.  
 
+## Configuração das variáveis de ambiente
+
+O Mini Servidor CRUD usa de variáveis de ambiente para configurar a porta do servidor HTTP e secret da autenticação. Para isso é necessário criar um arquivo `.env` na pasta raiz com o seguinte conteudo (exemplo):
+
+```bash
+PORT=3000
+SECRET=meu super segredo
+```
+
 ## Como rodar?
 
 Clone ou faça o download deste repositório. Acesse a pasta, instale as dependências e execute o via nodemon o javascript `server.js`  

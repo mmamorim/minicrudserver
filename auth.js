@@ -1,4 +1,7 @@
+import 'dotenv/config'
 import jwt from "jsonwebtoken"
+
+console.log("PORT",process.env.PORT);
 
 const auth = {
     username: 'admin',
