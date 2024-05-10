@@ -72,7 +72,7 @@ function createAPI(app, objEntity) {
     })
 
     app.delete(route+"/:id", auth.middlewareAuth, function (req, res) {
-        console.log('alguém fez requisição PUT '+route+"/:id",req.params);
+        console.log('alguém fez requisição DELETE '+route+"/:id",req.params);
         delete sgbd.db[entity][req.params.id]
         sgbd.write()
         res.json({})

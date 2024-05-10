@@ -1,10 +1,10 @@
 import 'dotenv/config'
 import jwt from "jsonwebtoken"
 import { SimpleCrypto } from "simple-crypto-js"
+import sgbd from './sgbd.js'
 
 const SECRET = process.env.SECRET
 let AUTH = false
-
 if(process.env.AUTH == 'true') {
     AUTH = true
     console.log(`🔥 mini crud server using AUTH!`);
@@ -24,7 +24,16 @@ const auth = {
         app.post('/auth', function (req, res) {
             console.log('conteúdo do body:', req.body);
             let { username, password } = req.body
-            if(username == auth.username && password == auth.password) {
+
+            if(sgbd.db["users"][username] == undefined) {
+                res.json('usuário / senha não existe/inválidos!')
+                return
+            }
+            let cryptpass = sgbd.db["users"][username].password
+            const simpleCrypto = new SimpleCrypto(SECRET)
+            let pass_decrypted = simpleCrypto.decrypt(cryptpass)
+            //console.log("pass_decrypted", pass_decrypted);
+            if(password == pass_decrypted) {
                 let token = auth.getToken(username)
                 res.json({ msg: 'ok', token })
             } else {

@@ -1,7 +1,7 @@
 
 const entities = {
     users: {
-        route: "/user",
+        route: "/users",
         name: "users",
         fields: [
             { name: "id", type: "int", pk: true },

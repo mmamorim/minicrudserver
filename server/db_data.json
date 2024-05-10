@@ -11,6 +11,18 @@
       "nome": "Uma música 2",
       "ano": "2016",
       "genero": "pop"
+    },
+    "musica03": {
+      "nome": "Limao 3",
+      "id": "musica03",
+      "genero": "rock",
+      "ano": "2020"
+    },
+    "musica04": {
+      "id": "musica04",
+      "nome": "Uma musica",
+      "ano": "2023",
+      "genero": "rock"
     }
   },
   "frutas": {
@@ -36,14 +48,14 @@
   },
   "filmes": {
     "filme01": {
-      "id": "filme-01",
+      "id": "filme01",
       "nome": "O vento levou",
-      "ano": 1960,
+      "ano": "1960",
       "genero": "romance"
     },
     "filme02": {
       "id": "filme02",
-      "nome": "de volta p/ futuro",
+      "nome": "De volta p/ futuro",
       "ano": "1980",
       "genero": "aventura"
     },
@@ -52,6 +64,18 @@
       "nome": "Rambo II",
       "ano": "1980",
       "genero": "aventura"
+    },
+    "filme05": {
+      "id": "filme05",
+      "nome": "Um nome de filme",
+      "genero": "aventura",
+      "ano": "2022"
+    },
+    "filme07": {
+      "id": "filme07",
+      "nome": "Um filme",
+      "genero": "ação",
+      "ano": "2000"
     }
   },
   "users": {
