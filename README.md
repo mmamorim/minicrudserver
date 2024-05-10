@@ -30,13 +30,13 @@ Clone ou faça o download deste repositório. Acesse a pasta, instale as depend�
 git clone https://github.com/mmamorim/minicrudserver.git
 cd minicrudserver
 npm install
-node server.js
+node ./server/server.js
 ```
 
 ## Como criar o usuário Admin?
 
 ```bash
-node createAdmin.js
+node ./server/createAdmin.js
 ```
 
 ## Onde os dados ficam armazenados?
